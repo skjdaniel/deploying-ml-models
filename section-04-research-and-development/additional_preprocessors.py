@@ -24,7 +24,6 @@ class TemporalVariableTransformer(BaseEstimator, TransformerMixin):
         
         return X
 
-
 class Mapper(BaseEstimator, TransformerMixin):
 
     def __init__(self, variables, mappings):
@@ -46,5 +45,25 @@ class Mapper(BaseEstimator, TransformerMixin):
         X = X.copy()
         for var in self.variables:
             X[var] = X[var].map(self.mappings)
+
+        return X
+
+class ToObjectTransformer(BaseEstimator, TransformerMixin):
+
+    def __init__(self, variables):
+
+        if not isinstance(variables, list):
+            raise ValueError('Variables should be a list')
+
+        self.variables = variables
+
+    def fit(self, X, y=None):
+        return self
+
+    def transform(self, X):
+
+        X = X.copy()
+        for var in self.variables:
+            X[var] = X[var].astype('O')
 
         return X
