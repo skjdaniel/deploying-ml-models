@@ -1,0 +1,8 @@
+# copied from the original repo
+# https://github.com/trainindata/deploying-machine-learning-models/blob/master/section-05-production-model-package/requirements/typing_requirements.txt
+
+# repo maintenance tooling
+black>=22.12.0,<23.0.0
+flake8>=6.0.0,<7.0.0
+mypy>=0.991,<1.0.0
+isort>=5.11.4,<6.0.0

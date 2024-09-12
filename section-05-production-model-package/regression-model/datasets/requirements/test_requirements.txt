@@ -1,0 +1,7 @@
+# copied from the original repo
+# https://github.com/trainindata/deploying-machine-learning-models/blob/master/section-05-production-model-package/requirements/test_requirements.txt
+
+-r requirements.txt
+
+# testing requirements
+pytest>=7.2.0,<8.0.0
